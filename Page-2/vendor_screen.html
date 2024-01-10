@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Screen</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .frame {
+            border: 1px solid #ddd;
+            margin: 20px 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .frame-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .frame-header h2 {
+            color: #333;
+        }
+
+        .frame-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #45a049;
+        }
+
+        .action-buttons button {
+            margin-right: 10px;
+        }
+
+        #add-update-vendor-frame {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .frame {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .buttons button {
+                padding: 8px 12px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="text-center">Vendor Screen</h1>
+
+<!-- Frame 1: Vendor List -->
+<div class="frame">
+    <div class="frame-header">
+        <h2>Vendor List</h2>
+        <input type="text" placeholder="Search vendors" class="form-control search-bar">
+    </div>
+    <div class="frame-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Vehicle No</th>
+                    <th>Transport Name</th>
+                    <th>Vendor</th>
+                    <th>Driver DL</th>
+                    <th>Mining</th>
+                    <th>Location</th>
+                    <th>Material</th>
+                    <th>Grade Size</th>
+                    <th>Contact No</th>
+                    <th>Mail</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123ABC</td>
+                    <td>TransportXYZ</td>
+                    <td>Vendor A</td>
+                    <td>DL12345</td>
+                    <td>Mining Corp</td>
+                    <td>Location XYZ</td>
+                    <td>Iron Ore</td>
+                    <td>Large</td>
+                    <td>987-654-3210</td>
+                    <td>vendorA@mail.com</td>
+                    <td>
+                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-secondary">View Details</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>456DEF</td>
+                    <td>TransportABC</td>
+                    <td>Vendor B</td>
+                    <td>DL67890</td>
+                    <td>Mining Ltd</td>
+                    <td>Location ABC</td>
+                    <td>Coal</td>
+                    <td>Medium</td>
+                    <td>123-456-7890</td>
+                    <td>vendorB@mail.com</td>
+                    <td>
+                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-secondary">View Details</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        <div class="buttons">
+            <div class="action-buttons">
+                <button id="add-vendor" class="btn btn-success">Add Vendor</button>
+                <button id="delete-vendor" class="btn btn-danger">Delete Vendor</button>
+                <button id="edit-vendor" class="btn btn-warning">Edit Vendor</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Frame 2: Add/Update Vendor -->
+<div class="frame" id="add-update-vendor-frame">
+    <div class="frame-header">
+        <h2>Add/Update Vendor</h2>
+    </div>
+    <div class="frame-content">
+        <label for="vehicle-no">Vehicle No:</label>
+        <input type="text" id="vehicle-no" class="form-control" placeholder="Enter vehicle number">
+
+        <label for="transport-name">Transport Name:</label>
+        <input type="text" id="transport-name" class="form-control" placeholder="Enter transport name">
+
+        <label for="vendor-name">Vendor Name:</label>
+        <input type="text" id="vendor-name" class="form-control" placeholder="Enter vendor name">
+
+        <label for="driver-dl">Driver DL:</label>
+        <input type="text" id="driver-dl" class="form-control" placeholder="Enter driver DL">
+
+        <label for="mining">Mining:</label>
+        <input type="text" id="mining" class="form-control" placeholder="Enter mining details">
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" class="form-control" placeholder="Enter location">
+
+        <label for="material">Material:</label>
+        <input type="text" id="material" class="form-control" placeholder="Enter material">
+
+        <label for="grade-size">Grade Size:</label>
+        <input type="text" id="grade-size" class="form-control" placeholder="Enter grade size">
+
+        <label for="contact-no">Contact No:</label>
+        <input type="text" id="contact-no" class="form-control" placeholder="Enter contact number">
+
+        <label for="email">Mail:</label>
+        <input type="text" id="email" class="form-control" placeholder="Enter email">
+
+        <!-- Add other relevant form fields here -->
+
+        <div class="buttons">
+            <button id="save-vendor" class="btn btn-primary">Save</button>
+            <button id="cancel-vendor" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('add-vendor').addEventListener('click', function() {
+        document.getElementById('add-update-vendor-frame').style.display = 'block';
+    });
+
+    document.getElementById('cancel-vendor').addEventListener('click', function() {
+        document.getElementById('add-update-vendor-frame').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Check (R & D)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    form {
+      width: 80%;
+      max-width: 400px; /* Adjusted maximum width for a more compact form */
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .pass {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    .pass:hover {
+      background-color: #218838;
+    }
+
+    .fail {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .fail:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin: 0;">Quality Check (R & D)</h1>
+  </header>
+
+  <div class="container">
+    <form>
+      <label for="material">Material</label>
+      <input type="text" id="material" name="material" required>
+
+      <label for="grade">Grade</label>
+      <input type="text" id="grade" name="grade" required>
+
+      <label for="truckNo">Truck No</label>
+      <input type="text" id="truckNo" name="truckNo" required>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="inTime">In Time</label>
+      <input type="time" id="inTime" name="inTime" required>
+
+      <label for="mining">Mining</label>
+      <input type="text" id="mining" name="mining" required>
+
+      <label for="challanPO">Challen/PO number</label>
+      <input type="text" id="challanPO" name="challanPO" required>
+
+      <label for="vendor">Vendor</label>
+      <input type="text" id="vendor" name="vendor" required>
+
+      <button class="pass">Pass</button>
+      <button class="fail">Fail</button>
+    </form>
+  </div>
+</body>
+</html>

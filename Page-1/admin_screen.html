@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Screen</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .frame {
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .frame-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .frame-header h2 {
+            color: #333;
+            margin: 0;
+        }
+
+        .frame-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .filters, .action-buttons {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .responsibility-assignment {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="text-center mt-4 mb-4">Admin Screen</h1>
+
+<div class="container">
+    <div class="frame">
+        <div class="frame-header">
+            <h2>User Management</h2>
+            <input type="text" placeholder="Search users" class="form-control">
+        </div>
+        <div class="filters">
+            <label for="role-filter">Filter by Role:</label>
+            <select id="role-filter" class="form-control">
+                <option value="all">All</option>
+                <option value="manager">Manager</option>
+                <option value="supervisor">Supervisor</option>
+                <!-- Add more roles as needed -->
+            </select>
+            <label for="status-filter">Filter by Status:</label>
+            <select id="status-filter" class="form-control">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="frame-content">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Responsibility</th>
+                    <th>ContactNo</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Manager</td>
+                    <td>Manage Teams</td>
+                    <td>123-456-7890</td>
+                    <td>john.doe@example.com</td>
+                    <td>2022-01-05</td>
+                    <td>Active</td>
+                    <td><button class="btn btn-primary">Edit</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Supervisor</td>
+                    <td>Quality Control</td>
+                    <td>987-654-3210</td>
+                    <td>jane.smith@example.com</td>
+                    <td>2022-01-06</td>
+                    <td>Inactive</td>
+                    <td><button class="btn btn-primary">Edit</button></td>
+                </tr>
+                <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <div class="action-buttons">
+                <button id="add-user" onclick="redirectToAddUserDashboard()" class="btn btn-success">Add User</button>
+                <button id="edit-user" class="btn btn-primary">Edit User</button>
+                <button id="remove-user" class="btn btn-danger">Remove User</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame">
+        <div class="frame-header">
+            <h2>Responsibility Assignment</h2>
+        </div>
+        <div class="frame-content">
+            <div class="responsibility-assignment">
+                <label for="user-list">Select User:</label>
+                <select id="user-list" class="form-control">
+                    <!-- User list will be dynamically populated here -->
+                </select>
+                <label for="responsibility-list">Select Responsibility:</label>
+                <select id="responsibility-list" class="form-control">
+                    <option value="manage-teams">Manage Teams</option>
+                    <option value="quality-control">Quality Control</option>
+                    <!-- Add more responsibilities as needed -->
+                </select>
+                <button id="assign-responsibility" class="btn btn-primary">Assign Responsibility</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+    function redirectToAddUserDashboard() {
+        // Redirect to the add_user_dashboard.html page for adding a new user with dashboard
+        window.location.href = 'add_user_dashboard.html';
+    }
+</script>
+</body>
+</html>

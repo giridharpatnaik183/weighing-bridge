@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weightment Interface</title>
+    <style>
+        #additionalBoxes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: -340px;
+        }
+
+        #additionalBoxes div {
+            margin-bottom: 5px;
+            text-align: right; /* Right-align the text */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+            display: flex;
+            flex-direction: column; /* Change to column */
+            justify-content: space-between;
+            align-items: flex-start; /* Align to the start (left) */
+            margin-bottom: 20px;
+        }
+
+        #header > div {
+            margin-bottom: 10px; /* Adjust margin between elements */
+        }
+
+        #weightReading {
+            color: blue;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section label {
+            width: 120px; /* Adjust the width of the labels for alignment */
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .rectangle {
+            width: 250px;
+            height: 60px;
+            background-color: #ccc;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        #updateButton {
+            background-color: green;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 50px;
+            margin-left: 650px;
+        }
+
+        #weightmentNo,
+        #weightmentType {
+            margin-left: auto; /* Move to the right */
+        }
+
+        #grossweight,
+        #tareweight,
+        #netweight,
+        #weightReading {
+            width: 80px;
+        }
+
+        #weightmentNo {
+            width: 40px;
+        }
+		.calendar-input {
+            margin-right: 10px;
+        }
+		
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="header">
+        <div>
+            <h2>Supervisor/QC</h2>
+        </div>
+        <div id="weightmentInfo">
+            <label for="weightmentNo">Weightment No</label>
+            <input type="text" id="weightmentNo" value="12" size="2">
+            <label for="weightmentType">Weightment Type</label>
+            <select id="weightmentType">
+                <option value="select">SELECT</option>
+                <!-- Add other options as needed -->
+            </select>
+        </div>
+    </div>
+    <div>
+        <label for="weightReading">Weight Reading</label>
+        <input type="text" id="weightReading" value="5000.00" size="6">
+    </div>
+    <div class="section">
+        <label for="grossweight">Gross Weight</label>
+        <input type="text" id="grossweight" value="">
+        <input type="datetime-local" id="dateGross" class="calendar-input" value="" size="">
+    </div>
+    <div class="section">
+        <label for="tareweight">Tare Weight</label>
+        <input type="text" id="tareweight" value="">
+        <input type="datetime-local" id="dateTare" class="calendar-input" value="" size="">
+    </div>
+    <div class="section">
+        <label for="netweight">Net Weight</label>
+        <input type="text" id="netweight" value="">
+        <input type="datetime-local" id="dateNet" class="calendar-input" value="" size="">
+    </div>
+    <div>
+        <h3>Camera Photo</h3>
+    </div>
+    <div class="section">
+        <div class="rectangle">Gross Weight IN</div>
+        <div class="rectangle">Tare Weight IN</div>
+    </div>
+    <div class="section">
+        <div class="rectangle">Gross Weight OUT</div>
+        <div class="rectangle">Tare Weight OUT</div>
+    </div>
+    <div id="additionalBoxes">
+        <div>GROSS WEIGHT</div>
+        <input type="text" id="grossweightInfo" value="">
+        <div>TARE WEIGHT</div>
+        <input type="text" id="tareweightInfo" value="">
+        <div>LAST WEIGHTMENT NO</div>
+        <input type="text" id="lastWeightmentNo" value="">
+        <div>Queue 1</div>
+        <input type="text" id="queue1" value="">
+        <div>Queue 2</div>
+        <input type="text" id="queue2" value="">
+        <div>Queue 3</div>
+        <input type="text" id="queue3" value="">
+    </div>
+    <div>
+        <button id="updateButton">UPDATE</button>
+    </div>
+</div>
+
+</body>
+</html>
