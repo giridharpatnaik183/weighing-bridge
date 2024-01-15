@@ -84,6 +84,16 @@
             text-decoration: underline;
         }
 
+        #navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        #datePicker,
+        #selectDropdown {
+            margin-right: 20px;
+        }
+
         #sidebar {
             width: 250px;
             height: 100%;
@@ -101,6 +111,36 @@
             margin-left: 250px;
             padding: 20px;
         }
+		#navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+#datePicker,
+#selectDropdown {
+    margin-right: 20px;
+    border-radius: 8px; /* Add border-radius for stylish appearance */
+    padding: 8px; /* Add padding for better visual appeal */
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: #fff;
+    transition: 0.5s;
+    border-top-right-radius: 15px; /* Add border-radius to the top-right corner */
+    border-bottom-right-radius: 15px; /* Add border-radius to the bottom-right corner */
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -109,6 +149,15 @@
 
     <div id="header" class="bg-primary">
         <span class="home-icon" onclick="location.href='index.html'"><i class=""></i> </span>
+        
+        <!-- New navbar-left section with date picker and select dropdown -->
+        <div id="navbar-left">
+            <input type="date" id="datePicker">
+            <select id="selectDropdown">
+                <option value="Bikram">Bikram</option>
+                <option value="Highlander">Highlander</option>
+            </select>
+        </div>
         
         <div id="tabs">
             <div class="tab nav-item" onclick="location.href='index.html'"><i class="fas fa-home"></i> Home</div>
