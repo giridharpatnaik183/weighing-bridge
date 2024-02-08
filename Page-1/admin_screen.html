@@ -124,7 +124,7 @@
             <div id="navbar-left">
                 <input type="date" id="datePicker">
                 <select id="selectDropdown">
-                    <option value="Bikram">Bikram</option>
+                    <option value="Vikram">Vikram</option>
                     <option value="Highlander">Highlander</option>
                 </select>
             </div>
@@ -223,6 +223,15 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get today's date in the format "YYYY-MM-DD"
+        var today = new Date().toISOString().split('T')[0];
+
+        // Set the default date value for the date input element
+        document.getElementById("datePicker").value = today;
+    });
+</script>
 
 <script>
     function redirectToAddUserDashboard() {
